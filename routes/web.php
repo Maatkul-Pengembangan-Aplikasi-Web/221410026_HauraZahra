@@ -29,6 +29,9 @@ Route::middleware('auth')->group(function () {
     Route::get('/mahasiswa', [MahasiswaController::class, 'index'])->name('/mahasiswa');
     Route::get('/mahasiswa/create', [MahasiswaController::class, 'create'])->name('mahasiswa/create');
     Route::post('/mahasiswa/save', [MahasiswaController::class, 'save'])->name('mahasiswa/save');
+    Route::get('/mahasiswa/edit/{id}', [MahasiswaController::class, 'edit'])->name('mahasiswa/edit');
+    Route::put('/mahasiswa/edit/{id}', [MahasiswaController::class, 'update'])->name('mahasiswa/update');
+    Route::delete('/mahasiswa/delete/{id}', [MahasiswaController::class, 'delete'])->name('mahasiswa/delete');
 });
 
 require __DIR__.'/auth.php';
